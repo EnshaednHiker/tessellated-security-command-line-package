@@ -1,0 +1,24 @@
+{
+  "name": "tessellated-security",
+  "version": "1.0.0",
+  "description": "command line package for the tessel device",
+  "main": "tessel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnshaednHiker/tessellated-security-command-line-package.git"
+  },
+  "author": "EnshaednHiker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnshaednHiker/tessellated-security-command-line-package/issues"
+  },
+  "homepage": "https://github.com/EnshaednHiker/tessellated-security-command-line-package#readme",
+  "dependencies": {
+    "johnny-five": "^0.10.10",
+    "tessel-av": "^0.15.1",
+    "tessel-io": "^0.10.3"
+  }
+}
