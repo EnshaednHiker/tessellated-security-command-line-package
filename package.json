@@ -1,6 +1,6 @@
 {
   "name": "tessellated-security",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "command line package for the tessel device",
   "main": "tessel.js",
   "scripts": {
