@@ -1,24 +1,26 @@
 {
   "name": "tessellated-security",
-  "version": "1.0.1",
-  "description": "command line package for the tessel device",
-  "main": "tessel.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EnshaednHiker/tessellated-security-command-line-package.git"
-  },
-  "author": "EnshaednHiker",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EnshaednHiker/tessellated-security-command-line-package/issues"
-  },
-  "homepage": "https://github.com/EnshaednHiker/tessellated-security-command-line-package#readme",
+  "version": "0.0.0",
+  "description": "Tessel project",
+  "main": "index.js",
   "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
     "johnny-five": "^0.10.10",
-    "tessel-av": "^0.15.1",
+    "minimist": "^1.2.0",
+    "prompt": "^1.0.0",
+    "request": "^2.81.0",
     "tessel-io": "^0.10.3"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./"
+  },
+  "repository": "https://github.com/EnshaednHiker/tessellated-security-command-line-package.git",
+  "keywords": [
+    "Tessel","IoT","Internet of Things", "Security"
+  ],
+  "readme": "",
+  "bin": {"tessellated-security":"./index.js"}
 }
