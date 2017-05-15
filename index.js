@@ -1,15 +1,10 @@
-
+#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
 var prompt = require('prompt');
 const args = require('minimist')(process.argv.slice(2));
 const child = require('child_process').exec;
-
-//Want to confirm whether user has passed in any runtime flags and only run the appropriate prompts for the ones that are missing.
-//Figuring out how to selectively run prompts.
-//Then, what next if you have all of your info?
-//two wrapper functions, one for token and one for wifi 
 
 //add token to the prompt
 if (!args.token){
