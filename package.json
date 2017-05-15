@@ -1,6 +1,6 @@
 {
   "name": "tessellated-security",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Tessel project",
   "main": "index.js",
   "dependencies": {
@@ -19,8 +19,13 @@
   },
   "repository": "https://github.com/EnshaednHiker/tessellated-security-command-line-package.git",
   "keywords": [
-    "Tessel","IoT","Internet of Things", "Security"
+    "Tessel",
+    "IoT",
+    "Internet of Things",
+    "Security"
   ],
   "readme": "",
-  "bin": {"tessellated-security":"./index.js"}
+  "bin": {
+    "tessellated-security": "./index.js"
+  }
 }
