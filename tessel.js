@@ -14,11 +14,6 @@ var TesselIO = require("tessel-io");
 var request = require("request");
 var path = require('path');
 
-// console.log(__dirname);
-// console.log(path.resolve(__dirname));
-// console.log(process.cwd());
-// console.log(path.resolve(process.cwd()));
-
 
 dotenv.config({path:path.join(__dirname,'.env')});
 
@@ -27,16 +22,13 @@ var board = new five.Board({
   io: new TesselIO()
 });
 
-
 var bearerToken = process.env.TOKEN;
 
-console.log(process.env);
-
-
 board.on("ready", function() {
-  // Contact Mode: Normally Open (default!)
+ 
   var door = new five.Switch({
     pin: "a2",
+    // Contact Mode: Normally Open (default!), invert: true assumes that the switch (magnets) start connected
     invert: true,
   });
 
