@@ -4,12 +4,14 @@
   "description": "Tessel project",
   "main": "index.js",
   "dependencies": {
+    "cross-spawn": "^5.1.0",
     "dotenv": "^4.0.0",
     "express": "^4.15.2",
     "johnny-five": "^0.10.10",
     "minimist": "^1.2.0",
     "prompt": "^1.0.0",
     "request": "^2.81.0",
+    "tessel-av": "^0.18.0",
     "tessel-io": "^0.10.3"
   },
   "devDependencies": {},

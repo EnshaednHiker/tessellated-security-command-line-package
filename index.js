@@ -4,7 +4,9 @@ const fs = require('fs');
 const path = require('path');
 var prompt = require('prompt');
 const args = require('minimist')(process.argv.slice(2));
-const child = require('child_process').exec;
+const child = require('cross-spawn');
+
+
 
 //add token to the prompt
 if (!args.token){
@@ -21,27 +23,30 @@ function saveToken (token){
     resolve(1);
   });
   return promise
-  .then(() => {
-    fs.writeFile('.env', `TOKEN=${token}`, (err) => {
-      if (err) throw err;
-      console.log('1. The .env file has been saved!');
-    })
-  })
-  .then(() => {
-    fs.writeFile('.tesselinclude', '.env', (err) => {
-      if (err) throw err;
-      console.log('2. The .tesselinclude file has been saved!');
-    })
-  })
-  .then(() => {
-      //invoke t2 push command so that tessel.js plus its dependencies get pushed to the tessel
-      child("t2 push tessel.js", (err)=>{
+    .then(() => {
+      fs.writeFile('.env', `TOKEN=${token}`, (err) => {
         if (err) throw err;
-        console.log("3. Command 't2 push tessel.js' entered in the command line. Files pushed to the tessel!");
-        console.log("You can now install your tessel on your door of choice.")
+        console.log('The .env file has been saved!');
+      })
+    })
+    .then(() => {
+      fs.writeFile('.tesselinclude', '.env', (err) => {
+        if (err) throw err;
+        console.log('The .tesselinclude file has been saved!');
+      })
+    })
+    .then(() => {
+        //invoke t2 push command so that tessel.js plus its dependencies get pushed to the tessel
+        let push = child("t2", ["push", "tessel.js"],{stdio: 'inherit'});
+        console.log(push.on);
+        push.on("close",(code)=>{
+            console.log(`Child exited with code ${code}`);
+            console.log("Command 't2 push tessel.js' entered in the command line. Files pushed to the tessel!");
+            console.log("You can now install your tessel on your door of choice.");
+          })
       });
-  });
-};
+  };
+
 
 function promptToken (){
 //token schema
