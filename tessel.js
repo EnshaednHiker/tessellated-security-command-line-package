@@ -3,17 +3,12 @@
 
 //if somebody types:
 
-//1. tessellated-security
-
-//2. tessellated-security --token
-
 var dotenv = require("dotenv");
 var tessel = require('tessel');
 var five = require("johnny-five");
 var TesselIO = require("tessel-io");
 var request = require("request");
 var path = require('path');
-
 
 dotenv.config({path:path.join(__dirname,'.env')});
 
@@ -44,7 +39,6 @@ board.on("ready", function() {
           console.log('error:', error); // Print the error if one occurred
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
           console.log('body:', body); 
-        
           if (error) {
             return console.error('upload failed:', error);
           }

@@ -42,7 +42,7 @@ function saveToken (token){
         push.on("close",(code)=>{
             console.log(`Child exited with code ${code}`);
             console.log("Command 't2 push tessel.js' entered in the command line. Files pushed to the tessel!");
-            console.log("You can now install your tessel on your door of choice.");
+            console.log("You can now disconnect your tessel from power and install it on your door of choice.Anytime you now connect the tessel power and are connected to wifi, the security system will run.");
           })
       });
   };
