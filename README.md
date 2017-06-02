@@ -11,7 +11,7 @@ an npm package to install software onto a tessel 2 for the Tessellated Security 
 
 2. Go to the command line utility on your computer. I am a fan of [cmder](http://cmder.net/) if you're on a Windows computer but the Command Prompt program will work fine too. If you're on Mac or Linux machine, you are on your own.
 
-3. Go into your command line program of choice and type `npm install -g tessellated-security`and hit enter. This installs the package globally, meaning you don't have to know where package files are in your system in order to access them.
+3. Go into your command line program of choice and type `npm install -g tessellated-security` and hit enter. This installs the package globally, meaning you don't have to know where package files are in your system in order to access them.
 
 4. Before installing the files on your tessel, you will need to set it up. Read all through steps 0, 1, and 2 [here](https://tessel.github.io/t2-start/), and do steps 1 and 2.  This package depends on you already having installed tessel CLI via `npm install -g t2-cli`.  This system requires that your tessel have access to the internet, so make sure you follow the instructions in step 2 on how to set up wifi on your tessel. NOTE: I had a weird wifi setup with a poorly set up DSL modem and router, and did a ton of reading up on stack overflow and tessel developer communities only to realize that the problem was not the tessel and was in fact my weird internet setup. Simply by upgrading to the [NETGEAR Nighthawk AC1900 Wi-Fi VDSL/ADSL Modem Router](https://www.amazon.com/gp/product/B0111MRL4S/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) for Centurylink DSL internet, I totally fixed my problem. FYI in case someone else has a problem with setting up their wifi on their tessel. 
 
@@ -19,7 +19,7 @@ an npm package to install software onto a tessel 2 for the Tessellated Security 
 
 6. With your tessel plugged in via usb to your computer, type `tessellated-security` in your command line program and hit enter. You will then be prompted to enter a token. Paste in your token you copied from your account page on the Tessellated Security website.  Hit enter.  Your tessel will then take about 2 to 3 minutes to get set up on and push over the files to make the system work. Once the process is over, you can unplug your tessel from your computer and install it on your door of choice. Now, whenever that tessel is connected to power and wifi, your security system will run, and you will receive emails noting each time that door opens. 
 
-7. Go to [this repo on GitHub](https://github.com/EnshaednHiker/tessellated-security) to see a video of the setting up the system demoing it action.
+7. Go to [this repo on GitHub](https://github.com/EnshaednHiker/tessellated-security) to see a video of setting up the system and a demo showing it in action.
 
 
 
