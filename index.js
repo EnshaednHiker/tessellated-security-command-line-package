@@ -18,7 +18,7 @@ else {
 
 function saveToken (token){
   console.log(token);
-  console.log("Steps 1, 2, and 3, will prepare your files to pushed onto your tessel device. Step 3 will take several minutes to complete, so please wait patiently. Please wait to disconnect your tessel from power until all three steps have concluded.")
+  console.log("Three will prepare your files to pushed onto your tessel device. The last step will take several minutes to complete, so please wait patiently. Please wait to disconnect your tessel from power until all three steps have concluded.")
   let promise = new Promise(function(resolve,reject){
     resolve(1);
   });
@@ -41,8 +41,13 @@ function saveToken (token){
         console.log(push.on);
         push.on("close",(code)=>{
             console.log(`Child exited with code ${code}`);
-            console.log("Command 't2 push tessel.js' entered in the command line. Files pushed to the tessel!");
-            console.log("You can now disconnect your tessel from power and install it on your door of choice.Anytime you now connect the tessel power and are connected to wifi, the security system will run.");
+            if(code===0){
+              console.log("Command 't2 push tessel.js' entered in the command line. Files pushed to the tessel!");
+              console.log("You can now disconnect your tessel from power and install it on your door of choice.Anytime you now connect the tessel power and are connected to wifi, the security system will run.");
+            }
+            else{
+              console.log("Something went wrong and no files were pushed to your tessel.")
+            }
           })
       });
   };

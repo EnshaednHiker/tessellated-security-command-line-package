@@ -6,7 +6,6 @@
   "dependencies": {
     "cross-spawn": "^5.1.0",
     "dotenv": "^4.0.0",
-    "express": "^4.15.2",
     "johnny-five": "^0.10.10",
     "minimist": "^1.2.0",
     "prompt": "^1.0.0",
@@ -25,7 +24,7 @@
     "Internet of Things",
     "Security"
   ],
-  "readme": "",
+  "readme": "README.md",
   "bin": {
     "tessellated-security": "./index.js"
   }

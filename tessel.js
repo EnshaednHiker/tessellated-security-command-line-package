@@ -1,27 +1,24 @@
 #!/usr/bin/env node --max_old_space_size=4096 --optimize_for_size --max_executable_size=4096 --stack_size=4096
 
-
-//if somebody types:
-
-var dotenv = require("dotenv");
-var tessel = require('tessel');
-var five = require("johnny-five");
-var TesselIO = require("tessel-io");
-var request = require("request");
-var path = require('path');
+const dotenv = require("dotenv");
+const tessel = require('tessel');
+const five = require("johnny-five");
+const TesselIO = require("tessel-io");
+const request = require("request");
+const path = require('path');
 
 dotenv.config({path:path.join(__dirname,'.env')});
 
-var board = new five.Board({
+const board = new five.Board({
   
   io: new TesselIO()
 });
 
-var bearerToken = process.env.TOKEN;
+let bearerToken = process.env.TOKEN;
 
 board.on("ready", function() {
  
-  var door = new five.Switch({
+  const door = new five.Switch({
     pin: "a2",
     // Contact Mode: Normally Open (default!), invert: true assumes that the switch (magnets) start connected
     invert: true,
