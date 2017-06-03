@@ -6,6 +6,7 @@
   "dependencies": {
     "cross-spawn": "^5.1.0",
     "dotenv": "^4.0.0",
+    "get-installed-path": "^2.0.3",
     "johnny-five": "^0.10.10",
     "minimist": "^1.2.0",
     "prompt": "^1.0.0",
@@ -15,7 +16,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./"
+    "start": "node ./",
+    "local-deploy":"npm uninstall -g tessellated-security && rm -rf C:\\Users\\Admin\\AppData\\Roaming\\npm-cache && npm install -g ./"
   },
   "repository": "https://github.com/EnshaednHiker/tessellated-security-command-line-package.git",
   "keywords": [

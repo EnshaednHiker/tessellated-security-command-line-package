@@ -6,6 +6,7 @@ var prompt = require('prompt');
 const args = require('minimist')(process.argv.slice(2));
 const child = require('cross-spawn');
 const childExec = require('child_process').exec;
+const getInstalledPath = require('get-installed-path');
 
 
 //add token to the prompt
@@ -18,7 +19,7 @@ else {
 
 function saveToken (token){
   console.log(token);
-  console.log("Three steps will prepare your files to pushed onto your tessel device. The last step will take several minutes to complete, so please wait patiently. Please wait to disconnect your tessel from power until all three steps have concluded.")
+  console.log("In two steps the system will prepare your files to pushed onto your tessel device. The second step will take several minutes to complete, so please wait patiently. WARNING: wait to disconnect your tessel from power until all both steps have concluded.")
   let promise = new Promise(function(resolve,reject){
     resolve(1);
   });
@@ -27,20 +28,12 @@ function saveToken (token){
     .then(()=>{
       //enter command npm root tessellated-security
       //set that to cwdPath string
-      return new Promise ((resolve, reject)=>{
-          childExec('npm root tessellated-security', (error, stdout)=>{
-              if (error){
-                reject(error);
-              }
-              else {
-                resolve(stdout);
-              }  
-          });
-      })
+      return getInstalledPath('tessellated-security');
     })
     .then((tessPath) => {
+      console.log(tessPath);
       return new Promise ((resolve, reject)=>{
-        fs.writeFile(path.join(tessPath,'tessellated-security','.env'), `TOKEN=${token}`, (err) => {
+        fs.writeFile(path.join(tessPath,'.env'), `TOKEN=${token}`, (err) => {
           if (err) {
             reject(err);
           }
@@ -53,7 +46,7 @@ function saveToken (token){
     })
     .then((tessPath) => {
         //invoke t2 push command so that tessel.js plus its dependencies get pushed to the tessel
-        let push = child("t2", ["push", "tessel.js"],{stdio: 'inherit',cwd:path.join(tessPath,'tessellated-security')});
+        let push = child("t2", ["push", "tessel.js"],{stdio: 'inherit',cwd:tessPath});
         push.on("close",(code)=>{
             console.log(`Child exited with code ${code}`);
             if(code===0){
