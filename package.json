@@ -26,6 +26,10 @@
     "Internet of Things",
     "Security"
   ],
+  "license":"MIT",
+  "author":{
+    "name": "Nicholas Bingham"
+  },
   "readme": "README.md",
   "bin": {
     "tessellated-security": "./index.js"

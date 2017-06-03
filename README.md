@@ -1,10 +1,20 @@
-# Tessellated Security
+# tessellated-security
 
 For the DYI security afficionado, the Tessellated Security project includes all inclusive code to run a server (Node/Express) with database (MongoDB/Mongoose), webclient, and a [tessel](https://tessel.io/) hooked up to a [magnetic door switch](https://www.sparkfun.com/products/13247). With everything set up, the service allows a user to receive a notification via email anytime a door opens. A detailed spec sheet of all of the parts used along with detailed instructions on how to put what where are in the Github repo link below.  The project's server is hosted on Heroku while the database is hosted on mLab. 
 
 Go to [this repo on GitHub](https://github.com/EnshaednHiker/tessellated-security) to see how all of the parts work together, instructions on how to set everything up, and videos of how to set things up plus another video demo of the service in action. Below is an explanation about setting up the code on the tessel. These instructions are aimed at people with maybe minimal coding experience. Let me know if things are unclear, and I'll try to clarify them.
 
-## tessellated-security-command-line-package
+[![NPM Version][npm-image]][npm-url]
+[![Linux Build][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
+
+## Install
+
+```bash
+npm install -g tessellated-security
+```
+
+## Usage
 an npm package to install software from the command line onto a tessel 2 for the Tessellated Security service
 
 1. Make sure you are using the LTS version of Node/npm package manager. That can be found [here](https://nodejs.org/en/).
@@ -21,5 +31,14 @@ an npm package to install software from the command line onto a tessel 2 for the
 
 7. Go to [this repo on GitHub](https://github.com/EnshaednHiker/tessellated-security) to see a video of setting up the system and a demo showing it in action.
 
+## License
 
+[MIT](http://vjpr.mit-license.org)
+
+[npm-image]: https://img.shields.io/npm/v/live-xxx.svg
+[npm-url]: https://npmjs.org/package/live-xxx
+[travis-image]: https://img.shields.io/travis/live-js/live-xxx/master.svg
+[travis-url]: https://travis-ci.org/live-js/live-xxx
+[coveralls-image]: https://img.shields.io/coveralls/live-js/live-xxx/master.svg
+[coveralls-url]: https://coveralls.io/r/live-js/live-xxx?branch=master
 
