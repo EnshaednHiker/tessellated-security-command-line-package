@@ -4,8 +4,8 @@ For the DYI security afficionado, the Tessellated Security project includes all 
 
 Go to [this repo on GitHub](https://github.com/EnshaednHiker/tessellated-security) to see how all of the parts work together, instructions on how to set everything up, and videos of how to set things up plus another video demo of the service in action. Below is an explanation about setting up the code on the tessel. These instructions are aimed at people with maybe minimal coding experience. Let me know if things are unclear, and I'll try to clarify them.
 
-## tessellated-security-npm-package
-an npm package to install software onto a tessel 2 for the Tessellated Security service
+## tessellated-security-command-line-package
+an npm package to install software from the command line onto a tessel 2 for the Tessellated Security service
 
 1. Make sure you are using the LTS version of Node/npm package manager. That can be found [here](https://nodejs.org/en/).
 
@@ -15,7 +15,7 @@ an npm package to install software onto a tessel 2 for the Tessellated Security 
 
 4. Go into your command line program of choice and type `npm install -g tessellated-security` and hit enter. This installs the package globally, meaning you don't have to know where package files are in your system in order to access them.
 
-5. Go to the [Tessellated Security website](https://enshaednhiker.github.io/tessellated-security-webclient/) and create an account. Click the 'Regist' tab in the navigation bar, enter your information, and click the submit button. On your account page, enter the name of your device and hit enter. Most likely you will want to name it something that connotes which door it is guarding i.e. backdoor, garage door, front door, etc. When you receive alerts from the tessel whenever the door opens, whatever you named your tessel clues you in as to which door opened. On your account page with the tessel device added to your account, copy the entire token to your clipboard.
+5. Go to the [Tessellated Security website](https://enshaednhiker.github.io/tessellated-security-webclient/) and create an account. Click the 'Register' tab in the navigation bar, enter your information, and click the submit button. On your account page, enter the name of your device and hit enter. Most likely you will want to name it something that connotes which door it is guarding i.e. backdoor, garage door, front door, etc. When you receive alerts from the tessel whenever the door opens, whatever you named your tessel clues you in as to which door opened. On your account page with the tessel device added to your account, copy the entire token to your clipboard.
 
 6. With your tessel plugged in via usb to your computer, type `tessellated-security` in your command line program and hit enter. You will then be prompted to enter a token. Paste in your token you copied from your account page on the Tessellated Security website.  Hit enter.  Your tessel will then take about 2 to 3 minutes to get set up on and push over the files to make the system work. Once the process is over, you can unplug your tessel from your computer and install it on your door of choice. Now, whenever that tessel is connected to power and wifi, your security system will run, and you will receive emails noting each time that door opens/whenever the magnet separates. 
 

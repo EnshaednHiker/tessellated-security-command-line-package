@@ -5,7 +5,7 @@ const path = require('path');
 var prompt = require('prompt');
 const args = require('minimist')(process.argv.slice(2));
 const child = require('cross-spawn');
-
+const childExec = require('child_process').exec;
 
 
 //add token to the prompt
@@ -18,37 +18,56 @@ else {
 
 function saveToken (token){
   console.log(token);
-  console.log("Three will prepare your files to pushed onto your tessel device. The last step will take several minutes to complete, so please wait patiently. Please wait to disconnect your tessel from power until all three steps have concluded.")
+  console.log("Three steps will prepare your files to pushed onto your tessel device. The last step will take several minutes to complete, so please wait patiently. Please wait to disconnect your tessel from power until all three steps have concluded.")
   let promise = new Promise(function(resolve,reject){
     resolve(1);
   });
+  
   return promise
-    .then(() => {
-      fs.writeFile('.env', `TOKEN=${token}`, (err) => {
-        if (err) throw err;
-        console.log('The .env file has been saved!');
+    .then(()=>{
+      //enter command npm root tessellated-security
+      //set that to cwdPath string
+      return new Promise ((resolve, reject)=>{
+          childExec('npm root tessellated-security', (error, stdout)=>{
+              if (error){
+                reject(error);
+              }
+              else {
+                resolve(stdout);
+              }  
+          });
       })
     })
-    .then(() => {
-      fs.writeFile('.tesselinclude', '.env', (err) => {
-        if (err) throw err;
-        console.log('The .tesselinclude file has been saved!');
-      })
+    .then((tessPath) => {
+      return new Promise ((resolve, reject)=>{
+        fs.writeFile(path.join(tessPath,'tessellated-security','.env'), `TOKEN=${token}`, (err) => {
+          if (err) {
+            reject(err);
+          }
+          else {
+            console.log('The .env file has been saved!');
+            resolve(tessPath);
+          }
+        })
+      });
     })
-    .then(() => {
+    .then((tessPath) => {
         //invoke t2 push command so that tessel.js plus its dependencies get pushed to the tessel
-        let push = child("t2", ["push", "tessel.js"],{stdio: 'inherit'});
-        console.log(push.on);
+        let push = child("t2", ["push", "tessel.js"],{stdio: 'inherit',cwd:path.join(tessPath,'tessellated-security')});
         push.on("close",(code)=>{
             console.log(`Child exited with code ${code}`);
             if(code===0){
               console.log("Command 't2 push tessel.js' entered in the command line. Files pushed to the tessel!");
-              console.log("You can now disconnect your tessel from power and install it on your door of choice.Anytime you now connect the tessel power and are connected to wifi, the security system will run.");
+              console.log("You can now disconnect your tessel from power and install it on your door of choice. Anytime you now connect the tessel power and are connected to wifi, the security system will run.");
             }
             else{
               console.log("Something went wrong and no files were pushed to your tessel.")
             }
           })
+      })
+      .catch((error)=>{
+        console.log(error);
+        process.exit();
       });
   };
 
