@@ -1,6 +1,6 @@
 {
   "name": "tessellated-security",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Tessel project",
   "main": "index.js",
   "dependencies": {
@@ -26,8 +26,8 @@
     "Internet of Things",
     "Security"
   ],
-  "license":"MIT",
-  "author":{
+  "license": "MIT",
+  "author": {
     "name": "Nicholas Bingham"
   },
   "readme": "README.md",
