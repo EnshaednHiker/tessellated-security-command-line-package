@@ -4,9 +4,7 @@ For the DYI security afficionado, the Tessellated Security project includes all 
 
 Go to [this repo on GitHub](https://github.com/EnshaednHiker/tessellated-security) to see how all of the parts work together, instructions on how to set everything up, and videos of how to set things up plus another video demo of the service in action. Below is an explanation about setting up the code on the tessel. These instructions are aimed at people with maybe minimal coding experience. Let me know if things are unclear, and I'll try to clarify them.
 
-[![NPM Version][npm-image]][npm-url]
-[![Linux Build][travis-image]][travis-url]
-[![Test Coverage][coveralls-image]][coveralls-url]
+[![NPM Version][npm-image]][https://www.npmjs.com/package/tessellated-security]
 
 ## Install
 
