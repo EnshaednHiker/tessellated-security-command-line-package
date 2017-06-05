@@ -10,7 +10,7 @@ const getInstalledPath = require('get-installed-path');
 
 
 //add token to the prompt
-if (!args.token){
+if (!args.token){  
   promptToken();
 }
 else {
@@ -19,7 +19,7 @@ else {
 
 function saveToken (token){
   console.log(token);
-  console.log("In two steps the system will prepare your files to pushed onto your tessel device. The second step will take several minutes to complete, so please wait patiently. WARNING: wait to disconnect your tessel from power until all both steps have concluded.")
+  console.log("In two steps the system will prepare your files to pushed onto your tessel device. The second step will take several minutes to complete, so please wait patiently. WARNING: wait to disconnect your tessel from power until both steps have concluded.")
   let promise = new Promise(function(resolve,reject){
     resolve(1);
   });
