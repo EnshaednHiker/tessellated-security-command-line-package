@@ -10,7 +10,6 @@ var path = require('path');
 dotenv.config({path:path.join(__dirname,'.env')});
 
 var board = new five.Board({
-  
   io: new TesselIO()
 });
 
