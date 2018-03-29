@@ -1,5 +1,5 @@
 {
-  "name": "tessellated-security-command-line-package",
+  "name": "tessellated-security",
   "version": "1.1.6",
   "description": "Tessel project",
   "main": "index.js",
