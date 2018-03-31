@@ -19,6 +19,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+  "bin": {
+    "tessellated-security": "index.js"
+  },
   "repository": "https://github.com/EnshaednHiker/tessellated-security-command-line-package.git",
   "keywords": [
     "Tessel"
