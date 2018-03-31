@@ -1,39 +1,38 @@
 {
-  {
-    "name": "tessellated-security",
-    "version": "1.1.4",
-    "description": "Tessel project",
-    "main": "index.js",
-    "dependencies": {
-      "cross-spawn": "^5.1.0",
-      "dotenv": "^4.0.0",
-      "get-installed-path": "^2.0.3",
-      "johnny-five": "^0.10.10",
-      "minimist": "^1.2.0",
-      "prompt": "^1.0.0",
-      "request": "^2.81.0",
-      "tessel-io": "^0.10.3"
-    },
-    "devDependencies": {},
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node ./",
-      "local-deploy": "npm uninstall -g tessellated-security && rm -rf C:\\Users\\Admin\\AppData\\Roaming\\npm-cache && npm install -g ./",
-      "global-deploy": "npm uninstall -g tessellated-security && rm -rf C:\\Users\\Admin\\AppData\\Roaming\\npm-cache && npm install -g tessellated-security"
-    },
-    "repository": "https://github.com/EnshaednHiker/tessellated-security-command-line-package.git",
-    "keywords": [
-      "Tessel",
-      "IoT",
-      "Internet of Things",
-      "Security"
-    ],
-    "license": "MIT",
-    "author": {
-      "name": "Nicholas Bingham"
-    },
-    "readme": "README.md",
-    "bin": {
-      "tessellated-security": "./index.js"
-    }
+  "name": "tessellated-security",
+  "version": "1.1.20",
+  "description": "Tessel project",
+  "main": "index.js",
+  "dependencies": {
+    "cross-spawn": "^5.1.0",
+    "dotenv": "^4.0.0",
+    "get-installed-path": "^2.0.3",
+    "johnny-five": "^0.10.10",
+    "minimist": "^1.2.0",
+    "prompt": "^1.0.0",
+    "request": "^2.81.0",
+    "tessel-io": "^0.10.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./",
+    "local-deploy": "npm uninstall -g tessellated-security && rm -rf C:\\Users\\Admin\\AppData\\Roaming\\npm-cache && npm install -g ./",
+    "global-deploy": "npm uninstall -g tessellated-security && rm -rf C:\\Users\\Admin\\AppData\\Roaming\\npm-cache && npm install -g tessellated-security"
+  },
+  "repository": "https://github.com/EnshaednHiker/tessellated-security-command-line-package.git",
+  "keywords": [
+    "Tessel",
+    "IoT",
+    "Internet of Things",
+    "Security"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Nicholas Bingham"
+  },
+  "readme": "README.md",
+  "bin": {
+    "tessellated-security": "./index.js"
   }
+}
