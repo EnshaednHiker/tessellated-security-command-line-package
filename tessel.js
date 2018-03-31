@@ -46,3 +46,14 @@ board.on("ready", function() {
 });
 
 
+/*
+    "cross-spawn": "^5.1.0",
+    "dotenv": "^4.0.0",
+    "get-installed-path": "^2.1.1",
+    "johnny-five": "^0.10.10",
+    "minimist": "^1.2.0",
+    "prompt": "^1.0.0",
+    "request": "^2.81.0",
+    "serialport": "^6.1.1",
+    "tessel-io": "^0.10.3"
+*/
