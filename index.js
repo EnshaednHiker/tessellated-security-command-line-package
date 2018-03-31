@@ -6,7 +6,7 @@ var prompt = require('prompt');
 const args = require('minimist')(process.argv.slice(2));
 const child = require('cross-spawn');
 const childExec = require('child_process').exec;
-const getInstalledPath = require('get-installed-path');
+const { getInstalledPath } = require('get-installed-path');
 
 
 //add token to the prompt
