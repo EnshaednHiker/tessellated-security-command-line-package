@@ -44,7 +44,21 @@ function saveToken (token){
         })
       });
     })
-    .then((tessPath) => {
+    // .then((tessPath) => {
+    //     //invoke t2 init command to set up project environment on tessel
+    //     let pushInit = child("t2", ["init"],{stdio: 'inherit',cwd:tessPath});
+    //     pushInit.on("close",codeInit=>{
+    //       console.log(`Child exited with code ${codeInit}`);
+    //       if(codeInit===0){
+    //         console.log("Command 't2 init' entered in the command line. Project area set up!");
+    //       }
+    //       else{
+    //         console.log("Something went wrong and the project area could not be set up on the tessel.")
+    //       }
+    //     })
+    //     return tessPath
+    //   })
+      .then((tessPath) => {
         //invoke t2 push command so that tessel.js plus its dependencies get pushed to the tessel
         let push = child("t2", ["push", "tessel.js"],{stdio: 'inherit',cwd:tessPath});
         push.on("close",(code)=>{
